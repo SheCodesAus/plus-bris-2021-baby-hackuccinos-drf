@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath cupcakescodersDRF cupcakescodersDRF.wsgi --log-file -
