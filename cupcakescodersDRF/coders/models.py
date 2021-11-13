@@ -5,26 +5,10 @@ from datetime import date
 
 # Create your models here.
 class coders(models.Model):
-    student_ID = models.ForeignKey(
-        get_user_model(),
-        on_delete=models.CASCADE,
-        related_name='UPDATEREQUIREDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD'
-    )
-    first_name = models.ForeignKey(
-        get_user_model(),
-        on_delete=models.CASCADE,
-        related_name='UPDATEREQUIREDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD'
-    )        
-    last_name = models.ForeignKey(
-        get_user_model(),
-        on_delete=models.CASCADE,
-        related_name='UPDATEREQUIREDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD'
-    )
-    email = models.ForeignKey(
-        get_user_model(),
-        on_delete=models.CASCADE,
-        related_name='UPDATEREQUIREDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD'
-    )    
+    student_ID = models.TextField()
+    first_name = models.TextField()  
+    last_name = models.TextField()
+    email = models.TextField()
     date_created = models.DateField(default=date.today) 
     image = models.URLField()    
     current_role = models.TextField()
