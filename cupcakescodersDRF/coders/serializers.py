@@ -11,11 +11,11 @@ class CodersSerializer(serializers.Serializer):
     image = serializers.URLField()   
     current_role = serializers.CharField(max_length=200)
     tech_industry = serializers.BooleanField() 
-    programs_complete = serializers.CharField(max_length=200, choices=coders.PROGRAMS)
-    programs_interested = serializers.CharField(max_length=200, choices=coders.PROGRAMS)
-    location = serializers.CharField(max_length=200, choices=coders.LOCATIONS)
-    mentoring = serializers.CharField(max_length=200, choices=coders.MENTOR)
-    partner_hire = serializers.CharField(max_length=200, choices=coders.PARTNERS)
+    programs_complete = serializers.CharField(max_length=200)
+    programs_interested = serializers.CharField(max_length=200)
+    location = serializers.CharField(max_length=200)
+    mentoring = serializers.CharField(max_length=200)
+    partner_hire = serializers.CharField(max_length=200)
     post_study = serializers.BooleanField()
       
     #this will be called for POST /projects to create a new projects
