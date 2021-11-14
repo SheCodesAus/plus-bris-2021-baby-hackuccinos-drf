@@ -13,29 +13,9 @@ class coders(models.Model):
     image = models.URLField()    
     current_role = models.TextField()
     tech_industry = models.BooleanField() 
-    PROGRAMS = (
-        ('1 Day Tech Workshop','1 Day Tech Workshop'),
-        ('1 Week Flash Program','1 Week Flash Program'),
-        ('She Codes Plus Program','She Codes Plus Program')
-    )
-    programs_complete = models.CharField(max_length=200, choices=PROGRAMS)
-    programs_interested = models.CharField(max_length=200, choices=PROGRAMS)
-    LOCATIONS = (
-        ('Brisbane','Brisbane'),
-        ('Perth','Perth'),
-        ('Port Hedland','Port Hedland')        
-    )
-    location = models.CharField(max_length=200, choices=LOCATIONS)
-    MENTOR = (
-        ('Yes','Yes'),
-        ('No','No'),
-        ('No, But Intested','No, But Interested')            
-    )
-    mentoring = models.CharField(max_length=200, choices=MENTOR)
-    PARTNERS = (
-        ('BHP','BHP'),
-        ('Bunnings','Bunnings'),
-        ('VGW','VGW')            
-    )
-    partner_hire = models.CharField(max_length=200, choices=PARTNERS)
+    programs_complete = models.CharField(max_length=200)
+    programs_interested = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
+    mentoring = models.CharField(max_length=200)
+    partner_hire = models.CharField(max_length=200)
     post_study = models.BooleanField() 
