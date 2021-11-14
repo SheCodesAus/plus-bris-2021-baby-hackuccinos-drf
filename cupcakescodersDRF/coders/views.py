@@ -5,11 +5,8 @@ from .models import coders
 from .serializers import CodersSerializer, CodersDetailSerialiser
 from django.http import Http404
 from rest_framework import status, permissions
-from .permission import IsOwnerOrReadOnly, IsSupporterOrReadOnly
 
 class CodersList(APIView):
-    #give permission to the owner of project only others just leave read only
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     # for GET /coders
     def get(self, request):
@@ -32,15 +29,10 @@ class CodersList(APIView):
         )
 
 class CodersDetail(APIView):
-    permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly,
-        IsOwnerOrReadOnly
-    ]
     
     def get_object(self, pk):
         try:
             coder = coders.objects.get(pk=pk)
-            self.check_object_permissions(self.request, coder)
             return coder
         except coders.DoesNotExist:
             raise Http404        
