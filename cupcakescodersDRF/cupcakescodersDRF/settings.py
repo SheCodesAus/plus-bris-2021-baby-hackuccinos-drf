@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'coders.apps.CodersConfig',
+    'rest_framework.authtoken',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,6 +47,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
 ]
+
+REST_FRAMEWORK = {
+'DEFAULT_AUTHENTICATION_CLASSES': [
+'rest_framework.authentication.TokenAuthentication',
+]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
