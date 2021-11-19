@@ -5,7 +5,6 @@ from datetime import date
 
 # Create your models here.
 class coders(models.Model):
-    student_ID = models.TextField()
     date_created = models.DateField(default=date.today) 
     image = models.URLField()    
     current_role = models.TextField()
