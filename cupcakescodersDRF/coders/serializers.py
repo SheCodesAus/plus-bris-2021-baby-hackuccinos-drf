@@ -4,9 +4,6 @@ from .models import coders
 class CodersSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
     student_ID = serializers.CharField(max_length=200)
-    first_name = serializers.CharField(max_length=200)  
-    last_name = serializers.CharField(max_length=200)
-    email = serializers.CharField(max_length=200)
     date_created = serializers.ReadOnlyField()
     image = serializers.URLField()   
     current_role = serializers.CharField(max_length=200)
@@ -25,9 +22,6 @@ class CodersSerializer(serializers.Serializer):
 class CodersDetailSerialiser(CodersSerializer):
     def update(self, instance, validated_data):
         instance.student_ID = validated_data.get('student_ID', instance.student_ID)
-        instance.first_name = validated_data.get('first_name', instance.first_name)
-        instance.last_name = validated_data.get('last_name', instance.last_name)
-        instance.email = validated_data.get('email', instance.email)
         instance.date_created = validated_data.get('date_created', instance.date_created)
         instance.image = validated_data.get('image', instance.image)
         instance.current_role = validated_data.get('current_role', instance.current_role)
