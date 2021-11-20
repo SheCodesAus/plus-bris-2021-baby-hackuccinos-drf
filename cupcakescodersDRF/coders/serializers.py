@@ -3,7 +3,7 @@ from .models import coders
 
 class CodersSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
-    student_ID = serializers.CharField(max_length=200)
+    student_ID = serializers.ReadOnlyField(source='student_ID.id')
     date_created = serializers.ReadOnlyField()
     image = serializers.URLField()   
     current_role = serializers.CharField(max_length=200)

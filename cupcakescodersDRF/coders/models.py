@@ -6,6 +6,11 @@ from datetime import date
 # Create your models here.
 class coders(models.Model):
     date_created = models.DateField(default=date.today) 
+    student_ID = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        related_name='student_ID_coders'
+    )
     image = models.URLField()    
     current_role = models.TextField()
     tech_industry = models.BooleanField() 
