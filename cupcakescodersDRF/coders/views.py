@@ -18,7 +18,7 @@ class CodersList(APIView):
     def post(self, request):
         serializer = CodersSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save(student_ID=request.user)
             return Response(
                 serializer.data,
                 status=status.HTTP_201_CREATED
