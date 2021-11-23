@@ -7,10 +7,11 @@ class CustomUserSerializer(serializers.Serializer):
     date_created = serializers.ReadOnlyField()    
     first_name = serializers.CharField(max_length=100)
     last_name = serializers.CharField(max_length=100)
-    email = serializers.EmailField()    
+    email = serializers.EmailField() 
+    username = serializers.CharField() 
 
     def create(self, validated_data):
-        return CustomUser.objects.create(**validated_data)
+        return CustomUser.objects.create_user(**validated_data)
 
 class UserDetailSerialiser(CustomUserSerializer):
     def update(self, instance, validated_data):
