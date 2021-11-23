@@ -12,7 +12,7 @@ class CodersSerializer(serializers.Serializer):
     programs_interested = serializers.CharField(max_length=200)
     location = serializers.CharField(max_length=200)
     mentoring = serializers.CharField(max_length=200)
-    partner_hire = serializers.CharField(max_length=200)
+    partner_hire = serializers.BooleanField()
     post_study = serializers.BooleanField()
       
     #this will be called for POST /projects to create a new projects
