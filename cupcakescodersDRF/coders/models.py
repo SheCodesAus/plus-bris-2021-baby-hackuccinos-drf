@@ -18,5 +18,5 @@ class coders(models.Model):
     programs_interested = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
     mentoring = models.CharField(max_length=200)
-    partner_hire = models.CharField(max_length=200)
+    partner_hire = models.BooleanField() 
     post_study = models.BooleanField() 
