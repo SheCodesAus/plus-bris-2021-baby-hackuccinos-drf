@@ -8,10 +8,16 @@ class CustomUserSerializer(serializers.Serializer):
     first_name = serializers.CharField(max_length=100)
     last_name = serializers.CharField(max_length=100)
     email = serializers.EmailField() 
-    username = serializers.CharField() 
+    username = serializers.CharField()
+    password = serializers.CharField(write_only=True)
 
     def create(self, validated_data):
-        return CustomUser.objects.create_user(**validated_data)
+
+        return CustomUser.objects.create_user(
+            validated_data['username'],
+            validated_data['email'],
+            validated_data['password'],
+        )
 
 class UserDetailSerialiser(CustomUserSerializer):
     def update(self, instance, validated_data):
