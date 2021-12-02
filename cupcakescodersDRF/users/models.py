@@ -13,7 +13,3 @@ class CustomUser(AbstractUser):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
-
-    def __str__(self):
-        #display as just the student ID (no {})
-        return self.student_id
