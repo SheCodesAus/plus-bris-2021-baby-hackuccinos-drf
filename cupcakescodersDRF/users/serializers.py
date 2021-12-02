@@ -13,11 +13,7 @@ class CustomUserSerializer(serializers.Serializer):
 
     def create(self, validated_data):
 
-        return CustomUser.objects.create_user(
-            validated_data['username'],
-            validated_data['email'],
-            validated_data['password'],
-        )
+        return CustomUser.objects.create_user(**validated_data)
 
 class UserDetailSerialiser(CustomUserSerializer):
     def update(self, instance, validated_data):
